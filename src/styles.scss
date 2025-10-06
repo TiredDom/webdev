@@ -1,0 +1,59 @@
+@use "sass:color";
+
+$dark-moss-green: #606c38;
+$pakistan-green: #283618;
+$cornsilk: #fefae0;
+$earth-yellow: #dda15e;
+$tigers-eye: #bc6c25;
+
+$primary: $dark-moss-green;
+$secondary: $earth-yellow;
+$dark: $pakistan-green;
+$light: $cornsilk;
+$success: $dark-moss-green;
+$info: #a98467;
+$warning: $tigers-eye;
+$danger: #9e2a2b;
+
+$body-bg: $cornsilk;
+$body-color: $dark;
+$link-color: $primary;
+$link-hover-color: color.adjust($primary, $lightness: -10%);
+$headings-color: $dark;
+$card-bg: #ffffff;
+$card-border-width: 0;
+$footer-bg: $dark;
+$footer-color: $cornsilk;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.navbar-brand img {
+	height: 50px;
+	width: auto;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.navbar-brand:hover img {
+	opacity: 0.85;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	transition: color 0.2s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+	color: $secondary;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+	color: $light;
+	font-weight: bold;
+}
+
+.navbar-dark .navbar-toggler {
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-dark .navbar-toggler:focus {
+	box-shadow: 0 0 0 0.25rem rgba($secondary, 0.5);
+}
