@@ -1,5 +1,7 @@
 @use "sass:color";
 
+$bootstrap-icons-font-dir: "../fonts/";
+
 $dark-moss-green: #606c38;
 $pakistan-green: #283618;
 $cornsilk: #fefae0;
@@ -57,3 +59,59 @@ $footer-color: $cornsilk;
 .navbar-dark .navbar-toggler:focus {
 	box-shadow: 0 0 0 0.25rem rgba($secondary, 0.5);
 }
+
+.page-blur-backdrop {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1045;
+	backdrop-filter: blur(5px);
+}
+
+body.modal-blur-active .page-blur-backdrop {
+	display: block;
+}
+
+label.error {
+	color: $danger;
+	font-size: 0.875em;
+	margin-top: 0.25rem;
+}
+
+input.error,
+textarea.error {
+	border-color: $danger;
+}
+
+input.error:focus,
+textarea.error:focus {
+	border-color: $danger;
+	box-shadow: 0 0 0 0.25rem rgba($danger, 0.25);
+}
+
+.about-header {
+	position: relative;
+	background: url('../images/about.png') center center/cover no-repeat;
+	height: 400px;
+}
+
+.about-header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba($dark, 0.5);
+}
+
+.team-member-card img {
+	max-width: 150px;
+	box-shadow: 0 0.5rem 1rem rgba($dark, 0.15);
+}
+
+
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";

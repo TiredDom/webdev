@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact Us - E-Shop</title>
+		<link rel="stylesheet" href="dist/css/styles.css" />
+		<link rel="stylesheet" href="dist/css/jquery-ui.min.css" />
+		<link rel="stylesheet" href="dist/css/bootstrap-icons.min.css" />
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<div class="page-blur-backdrop"></div>
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="dist/images/logo-light.svg" alt="Vallera Logo" />
+				</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+						<li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+								<i class="bi bi-person-fill me-2"></i>Login
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="cart.html">
+								<i class="bi bi-cart-fill me-1"></i>Cart
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="page-content">
+			<!-- PAGE HEADER -->
+			<header class="py-5">
+				<div class="container text-center">
+					<h1 class="display-4">Contact Us</h1>
+					<p class="lead text-muted">We'd love to hear from you. Please fill out the form below.</p>
+				</div>
+			</header>
+
+			<!-- CONTACT FORM -->
+			<section class="pb-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 mx-auto">
+							<form id="contactForm" novalidate>
+								<div class="mb-3">
+									<label for="contactName" class="form-label">Full Name</label>
+									<input type="text" class="form-control no-leading-space normalize-spaces" id="contactName" name="contactName" required />
+								</div>
+								<div class="mb-3">
+									<label for="contactEmail" class="form-label">Email Address</label>
+									<input type="email" class="form-control" id="contactEmail" name="contactEmail" required />
+								</div>
+								<div class="mb-3">
+									<label for="contactMessage" class="form-label">Message</label>
+									<textarea class="form-control no-leading-space" id="contactMessage" name="contactMessage" rows="5" required></textarea>
+								</div>
+								<button type="submit" class="btn btn-primary w-100">Send Message</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- FOOTER -->
+		<footer class="mt-auto bg-dark text-white text-center py-3">
+			<p class="mb-0">© 2025 Vallera E-Shop | Designed for demo purposes</p>
+		</footer>
+
+		<script src="dist/js/jquery.min.js"></script>
+		<script src="dist/js/bootstrap.bundle.min.js"></script>
+		<script src="dist/js/jquery.validate.min.js"></script>
+		<script src="dist/js/jquery-ui.min.js"></script>
+		<script src="dist/js/main.js"></script>
+
+		<div id="modal-placeholder"></div>
+	</body>
+</html>
