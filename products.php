@@ -1,55 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale-1.0" />
-		<title>Our Products - E-Shop</title>
-		<link rel="stylesheet" href="dist/css/styles.css" />
-		<link rel="stylesheet" href="dist/css/jquery-ui.min.css" />
-		<link rel="stylesheet" href="dist/css/bootstrap-icons.min.css" />
-	</head>
-	<body class="d-flex flex-column min-vh-100">
-		<div class="page-blur-backdrop"></div>
-		<!-- NAVBAR -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-			<div class="container">
-				<a class="navbar-brand" href="index.php">
-					<img src="dist/images/logo-light.svg" alt="Vallera Logo" />
-				</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarNav"
-					aria-controls="navbarNav"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ms-auto align-items-center">
-						<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-						<li class="nav-item"><a class="nav-link active" href="products.php">Products</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
-						<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-						<li class="nav-item">
-							<a class="nav-link position-relative" href="cart.php">
-								<i class="bi bi-cart-fill"></i> Cart
-								<span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-								<i class="bi bi-person-fill me-1"></i>Login
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+<?php require_once 'partials/header.php'; ?>
 
-		<div class="page-content">
 			<!-- PAGE HEADER -->
 			<header class="py-5">
 				<div class="container text-center">
@@ -213,34 +163,5 @@
 					</div>
 				</div>
 			</section>
-		</div>
 
-		<!-- FOOTER -->
-		<footer class="mt-auto bg-dark text-white text-center py-3">
-			<p class="mb-0">© 2025 Vallera E-Shop | Designed for demo purposes</p>
-		</footer>
-
-		<!-- TOAST CONTAINER -->
-		<div class="toast-container position-fixed top-0 end-0 p-3">
-			<div id="toast-template" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-				<div class="toast-header">
-					<i class="bi me-2"></i>
-					<strong class="me-auto toast-title">Notification</strong>
-					<small>Just now</small>
-					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-				</div>
-				<div class="toast-body">
-					This is a sample message.
-				</div>
-			</div>
-		</div>
-
-		<script src="dist/js/jquery.min.js"></script>
-		<script src="dist/js/bootstrap.bundle.min.js"></script>
-		<script src="dist/js/jquery.validate.min.js"></script>
-		<script src="dist/js/jquery-ui.min.js"></script>
-		<script src="dist/js/main.js"></script>
-
-		<div id="modal-placeholder"></div>
-	</body>
-</html>
+<?php require_once 'partials/footer.php'; ?>

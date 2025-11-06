@@ -60,9 +60,27 @@ $(document).ready(function () {
 	$('body').on('hidden.bs.modal', '#loginModal', function () {
 		$('body').removeClass('modal-blur-active');
 	});
+	
+	$(document).on('click', '#cart-nav-link', function (e) {
+		const isLoggedIn = $('#navbarDropdown').length > 0;
+		if (!isLoggedIn) {
+			e.preventDefault();
+			const loginModal = new bootstrap.Modal($('#loginModal'));
+			loginModal.show();
+			showToast('Please log in or create an account to view your cart.', 'error');
+		}
+	});
 
 	// --- PRODUCT CARD INTERACTIVITY ---
 	$(document).on('click', '.product-grid .buy', function() {
+		const isLoggedIn = $('#navbarDropdown').length > 0;
+		if (!isLoggedIn) {
+			const loginModal = new bootstrap.Modal($('#loginModal'));
+			loginModal.show();
+			showToast('Please log in to add items to your cart.', 'error');
+			return;
+		}
+
 		const wrapper = $(this).closest('.wrapper');
 		const bottom = wrapper.find('.bottom');
 		
