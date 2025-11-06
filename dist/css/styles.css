@@ -4279,18 +4279,18 @@ textarea.form-control-lg {
 
 .navbar-dark,
 .navbar[data-bs-theme=dark] {
-  --bs-navbar-color: rgba(255, 255, 255, 0.55);
-  --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+  --bs-navbar-color: rgba(254, 250, 224, 0.75);
+  --bs-navbar-hover-color: #fefae0;
   --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
-  --bs-navbar-active-color: #fff;
-  --bs-navbar-brand-color: #fff;
-  --bs-navbar-brand-hover-color: #fff;
-  --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
-  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-active-color: #fefae0;
+  --bs-navbar-brand-color: #fefae0;
+  --bs-navbar-brand-hover-color: #fefae0;
+  --bs-navbar-toggler-border-color: rgba(254, 250, 224, 0.25);
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28254, 250, 224, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 [data-bs-theme=dark] .navbar-toggler-icon {
-  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28254, 250, 224, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .card {
@@ -11859,8 +11859,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.bg-dark {
+  background-color: #283618 !important;
+}
+
 .navbar-brand img {
-  height: 50px;
+  height: 35px;
   width: auto;
   transition: opacity 0.2s ease-in-out;
 }
@@ -11869,25 +11873,8 @@ textarea.form-control-lg {
   opacity: 0.85;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  transition: color 0.2s ease-in-out;
-}
-
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #dda15e;
-}
-
-.navbar-dark .navbar-nav .nav-link.active {
-  color: #fefae0;
-  font-weight: bold;
-}
-
-.navbar-dark .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.navbar-dark .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.25rem rgba(221, 161, 94, 0.5);
 }
 
 .page-blur-backdrop {
@@ -11903,6 +11890,30 @@ textarea.form-control-lg {
 
 body.modal-blur-active .page-blur-backdrop {
   display: block;
+}
+
+.ratio .carousel .carousel-item img {
+  object-fit: cover;
+  height: 100% !important;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+  display: none;
+}
+
+input[type=password]::-ms-reveal,
+input[type=password]::-webkit-password-toggle-button {
+  display: none !important;
 }
 
 label.error {
@@ -11943,6 +11954,221 @@ textarea.error:focus {
   box-shadow: 0 0.5rem 1rem rgba(40, 54, 24, 0.15);
 }
 
+.product-grid .wrapper {
+  width: 100%;
+  aspect-ratio: 320/450;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0;
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.product-grid .wrapper:hover {
+  transform: scale(1);
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}
+.product-grid .wrapper .container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.product-grid .wrapper .top {
+  height: 75%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.product-grid .wrapper .bottom {
+  width: 200%;
+  height: 25%;
+  transition: transform 0.5s;
+  display: flex;
+}
+.product-grid .wrapper .bottom.clicked {
+  transform: translateX(-50%);
+}
+.product-grid .wrapper .bottom h1, .product-grid .wrapper .bottom .h1 {
+  font-size: 1.1rem;
+}
+.product-grid .wrapper .bottom p {
+  font-size: 0.9rem;
+}
+.product-grid .wrapper .bottom h1, .product-grid .wrapper .bottom .h1, .product-grid .wrapper .bottom p {
+  margin: 0;
+  padding: 0;
+}
+.product-grid .wrapper .bottom .left {
+  height: 100%;
+  width: 50%;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-grid .wrapper .bottom .details {
+  padding: 15px;
+}
+.product-grid .wrapper .bottom .buy {
+  width: 30%;
+  height: 100%;
+  background: #f1f1f1;
+  transition: background 0.5s;
+  border-left: solid thin rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-grid .wrapper .bottom .buy i {
+  font-size: 24px;
+  color: #283618;
+  transition: transform 0.5s;
+}
+.product-grid .wrapper .bottom .buy:hover {
+  background: #606c38;
+  cursor: pointer;
+}
+.product-grid .wrapper .bottom .buy:hover i {
+  transform: scale(1.1);
+  color: white;
+}
+.product-grid .wrapper .bottom .right {
+  width: 50%;
+  background: #606c38;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-grid .wrapper .bottom .right .details {
+  width: 70%;
+}
+.product-grid .wrapper .bottom .right .action-wrapper {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.product-grid .wrapper .bottom .right .done {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-grid .wrapper .bottom .right .done i {
+  font-size: 24px;
+  color: white;
+}
+.product-grid .wrapper .bottom .right .remove {
+  width: 100%;
+  height: 100%;
+  background: #9e2a2b;
+  transition: transform 0.3s ease, background 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-grid .wrapper .bottom .right .remove i {
+  font-size: 24px;
+  color: white;
+}
+.product-grid .wrapper .bottom .right .action-wrapper:hover .remove {
+  transform: translateY(0);
+  cursor: pointer;
+}
+.product-grid .wrapper .inside {
+  z-index: 9;
+  background: #283618;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  border-radius: 0px 0px 200px 200px;
+  transition: all 0.5s, border-radius 2s, top 1s;
+  overflow: hidden;
+}
+.product-grid .wrapper .inside .icon {
+  position: absolute;
+  right: 85px;
+  top: 85px;
+  color: white;
+  opacity: 1;
+  font-size: 1.5rem;
+}
+.product-grid .wrapper .inside:hover {
+  width: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 0;
+  height: 75%;
+}
+.product-grid .wrapper .inside:hover .icon {
+  opacity: 0;
+  right: 15px;
+  top: 15px;
+}
+.product-grid .wrapper .inside:hover .contents {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.product-grid .wrapper .inside .contents {
+  padding: 10% 5%;
+  opacity: 0;
+  transform: scale(0.5) translateY(-200%);
+  transition: opacity 0.2s, transform 0.8s;
+}
+.product-grid .wrapper .inside .contents table {
+  text-align: left;
+  width: 100%;
+  color: white;
+  font-size: 0.9em;
+}
+.product-grid .wrapper .inside .contents table th, .product-grid .wrapper .inside .contents table td {
+  padding-bottom: 0.5rem;
+}
+.product-grid .wrapper .inside .contents h1, .product-grid .wrapper .inside .contents .h1, .product-grid .wrapper .inside .contents p, .product-grid .wrapper .inside .contents table {
+  color: white;
+}
+.product-grid .wrapper .inside .contents p {
+  font-size: 13px;
+}
+
+@media (max-width: 991.98px) {
+  .product-grid .wrapper {
+    transform: none;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  .product-grid .wrapper:hover {
+    transform: none;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  .product-grid .wrapper .inside:hover {
+    cursor: pointer;
+  }
+  .product-grid .wrapper .inside.reveal {
+    width: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    height: 75%;
+  }
+  .product-grid .wrapper .inside.reveal .icon {
+    opacity: 0;
+  }
+  .product-grid .wrapper .inside.reveal .contents {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 /*!
  * Bootstrap Icons v1.13.1 (https://icons.getbootstrap.com/)
  * Copyright 2019-2024 The Bootstrap Authors
