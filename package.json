@@ -1,0 +1,35 @@
+{
+  "name": "webdev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:css && npm run build:js && npm run build:fonts && npm run build:icon-fonts && npm run build:img",
+    "build:css": "postcss src/css/styles.css -o dist/css/styles.css",
+    "build:js": "cpx \"node_modules/jquery/dist/jquery.min.js\" \"dist/js\" && cpx \"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js\" \"dist/js\" && cpx \"node_modules/aos/dist/aos.js\" \"dist/js\" && cpx \"node_modules/jquery-validation/dist/jquery.validate.min.js\" \"dist/js\" && cpx \"src/js/**/*\" \"dist/js\"",
+    "build:fonts": "cpx \"src/fonts/**/*\" \"dist/fonts\"",
+    "build:icon-fonts": "cpx \"node_modules/bootstrap-icons/font/fonts/*\" \"dist/fonts\"",
+    "build:img": "cpx \"src/img/**/*\" \"dist/img\"",
+    "watch:css": "postcss src/css/styles.css -o dist/css/styles.css --watch",
+    "watch:js": "cpx \"src/js/**/*\" \"dist/js\" --watch",
+    "watch:img": "cpx \"src/img/**/*\" \"dist/img\" --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "jquery": "^3.7.1",
+    "jquery-validation": "^1.21.0"
+  },
+  "devDependencies": {
+    "aos": "^2.3.4",
+    "autoprefixer": "^10.4.22",
+    "cpx": "^1.5.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
+    "postcss-url": "^10.1.3"
+  }
+}
