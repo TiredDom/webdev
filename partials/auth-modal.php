@@ -17,7 +17,12 @@
                                 <label for="loginPassword" class="form-label small text-muted font-weight-bold mb-0">Password</label>
                                 <a href="#" class="text-decoration-none small text-muted">Forgot?</a>
                             </div>
-                            <input type="password" class="form-control bg-light border-0 py-2" id="loginPassword" name="loginPassword" placeholder="Enter your password">
+                            <div class="position-relative password-wrapper">
+                                <input type="password" class="form-control bg-light border-0 py-2 pe-5" id="loginPassword" name="loginPassword" placeholder="Enter your password">
+                                <span class="position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer toggle-password" style="display: none; cursor: pointer;">
+                                    <i class="bi bi-eye-fill text-muted"></i>
+                                </span>
+                            </div>
                         </div>
                         <button type="submit" class="btn login-button w-100 py-2 mb-3 justify-content-center">Log In</button>
                     </form>
@@ -38,11 +43,21 @@
                         </div>
                         <div class="mb-3">
                             <label for="signupPassword" class="form-label small text-muted font-weight-bold">Password</label>
-                            <input type="password" class="form-control bg-light border-0 py-2" id="signupPassword" name="signupPassword" placeholder="Create a password">
+                            <div class="position-relative password-wrapper">
+                                <input type="password" class="form-control bg-light border-0 py-2 pe-5" id="signupPassword" name="signupPassword" placeholder="Create a password">
+                                <span class="position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer toggle-password" style="display: none; cursor: pointer;">
+                                    <i class="bi bi-eye-fill text-muted"></i>
+                                </span>
+                            </div>
                         </div>
                         <div class="mb-4">
                             <label for="signupConfirmPassword" class="form-label small text-muted font-weight-bold">Confirm Password</label>
-                            <input type="password" class="form-control bg-light border-0 py-2" id="signupConfirmPassword" name="signupConfirmPassword" placeholder="Confirm your password">
+                            <div class="position-relative password-wrapper">
+                                <input type="password" class="form-control bg-light border-0 py-2 pe-5" id="signupConfirmPassword" name="signupConfirmPassword" placeholder="Confirm your password">
+                                <span class="position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer toggle-password" style="display: none; cursor: pointer;">
+                                    <i class="bi bi-eye-fill text-muted"></i>
+                                </span>
+                            </div>
                         </div>
                         <button type="submit" class="btn login-button w-100 py-2 mb-3 justify-content-center">Create Account</button>
                     </form>

@@ -78,6 +78,10 @@ $(document).ready(function() {
             $('#signupForm')[0].reset();
         }
         $('.form-control').removeClass('error is-invalid');
+        
+        $('.password-wrapper .toggle-password').hide();
+        $('.password-wrapper .toggle-password i').removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
+        $('.password-wrapper input').attr('type', 'password');
     });
 
     $.validator.addMethod("nospaces", function(value, element) {
@@ -88,19 +92,22 @@ $(document).ready(function() {
         return this.optional(element) || /^[a-zA-Z\s'-]+$/.test(value);
     }, "Name must contain only letters, spaces, hyphens, or apostrophes.");
 
+    $.validator.addMethod("strictEmail", function(value, element) {
+        return this.optional(element) || /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
+    }, "Please enter a valid email address (e.g., user@example.com).");
+
     if ($('#newsletterForm').length > 0) {
         $('#newsletterForm').validate({
             errorClass: 'text-danger small',
             rules: {
                 newsletter_email: {
                     required: true,
-                    email: true
+                    strictEmail: true
                 }
             },
             messages: {
                 newsletter_email: {
-                    required: "This field is required.",
-                    email: "Please enter a valid email address."
+                    required: "This field is required."
                 }
             },
             errorPlacement: function(error, element) {
@@ -129,7 +136,7 @@ $(document).ready(function() {
                 },
                 email: {
                     required: true,
-                    email: true
+                    strictEmail: true
                 },
                 message: {
                     required: true,
@@ -144,8 +151,7 @@ $(document).ready(function() {
                     lettersOnly: "Name cannot contain numbers or special characters."
                 },
                 email: {
-                    required: "This field is required.",
-                    email: "Please include an '@' and a valid domain (e.g., .com)."
+                    required: "This field is required."
                 },
                 message: {
                     required: "This field is required.",
@@ -164,7 +170,7 @@ $(document).ready(function() {
         rules: {
             loginEmail: {
                 required: true,
-                email: true
+                strictEmail: true
             },
             loginPassword: {
                 required: true
@@ -172,11 +178,17 @@ $(document).ready(function() {
         },
         messages: {
             loginEmail: {
-                required: "Email is required.",
-                email: "Invalid email address."
+                required: "Email is required."
             },
             loginPassword: {
                 required: "Password is required."
+            }
+        },
+        errorPlacement: function(error, element) {
+            if (element.closest('.password-wrapper').length) {
+                error.insertAfter(element.closest('.password-wrapper'));
+            } else {
+                error.insertAfter(element);
             }
         },
         submitHandler: function(form) {
@@ -219,7 +231,7 @@ $(document).ready(function() {
             },
             signupEmail: {
                 required: true,
-                email: true
+                strictEmail: true
             },
             signupPassword: {
                 required: true,
@@ -244,6 +256,13 @@ $(document).ready(function() {
             signupConfirmPassword: {
                 required: "Please confirm your password.",
                 equalTo: "Passwords do not match."
+            }
+        },
+        errorPlacement: function(error, element) {
+            if (element.closest('.password-wrapper').length) {
+                error.insertAfter(element.closest('.password-wrapper'));
+            } else {
+                error.insertAfter(element);
             }
         },
         submitHandler: function(form) {
@@ -302,5 +321,35 @@ $(document).ready(function() {
         $(this).val(function(i, value) {
             return $.trim(value);
         });
+    });
+
+    $(document).on('input', '.password-wrapper input', function() {
+        const wrapper = $(this).closest('.password-wrapper');
+        const iconSpan = wrapper.find('.toggle-password');
+        if ($(this).val().length > 0) {
+            iconSpan.show();
+        } else {
+            iconSpan.hide();
+        }
+    });
+
+    $(document).on('focus', '.password-wrapper input', function() {
+        const wrapper = $(this).closest('.password-wrapper');
+        const iconSpan = wrapper.find('.toggle-password');
+        if ($(this).val().length > 0) {
+            iconSpan.show();
+        }
+    });
+    
+    $(document).on('click', '.toggle-password', function () {
+        const icon = $(this).find('i');
+        const input = $(this).closest('.password-wrapper').find('input');
+        if (input.attr('type') === 'password') {
+            input.attr('type', 'text');
+            icon.removeClass('bi-eye-fill').addClass('bi-eye-slash-fill');
+        } else {
+            input.attr('type', 'password');
+            icon.removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
+        }
     });
 });
