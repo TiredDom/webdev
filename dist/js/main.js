@@ -180,10 +180,28 @@ $(document).ready(function() {
             }
         },
         submitHandler: function(form) {
-            showToast('Logged in successfully!', 'success');
-            setTimeout(function() {
-                $('#loginModal').modal('hide');
-            }, 1000);
+            const formData = $(form).serialize() + '&action=login';
+            $.ajax({
+                type: 'POST',
+                url: 'auth_handler.php',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        showToast(response.message, 'success');
+                        setTimeout(function() {
+                            window.location.href = response.redirect;
+                        }, 1000);
+                    } else {
+                        $(form).validate().showErrors({
+                            "loginPassword": response.message
+                        });
+                    }
+                },
+                error: function() {
+                    showToast('An error occurred. Please try again.', 'error');
+                }
+            });
         }
     });
 
@@ -229,11 +247,28 @@ $(document).ready(function() {
             }
         },
         submitHandler: function(form) {
-            showToast('Account created successfully!', 'success');
-            setTimeout(function() {
-                $('#show-login-view').trigger('click');
-                form.reset();
-            }, 1000);
+            const formData = $(form).serialize() + '&action=signup';
+            $.ajax({
+                type: 'POST',
+                url: 'auth_handler.php',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        showToast(response.message, 'success');
+                        setTimeout(function() {
+                            $('#show-login-view').trigger('click');
+                            form.reset();
+                        }, 1000);
+                    } else {
+                        showToast(response.message, 'error');
+                    }
+                },
+                error: function() {
+                    showToast('An error occurred. Please try again.', 'error');
+                }
+            });
+            return false;
         }
     });
 

@@ -3854,7 +3854,7 @@ body {
 }
 .toast-custom-position {
     top: 110px;
-    z-index: 1050;
+    z-index: 1090;
 }
 .modal-content {
     border: none;
@@ -3863,5 +3863,11 @@ body {
     box-shadow: none;
     border-color: #009970;
     background-color: #fff !important;
+}
+label.error {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+    width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
