@@ -12,6 +12,3 @@ CREATE TABLE users (
     role ENUM('user', 'admin') DEFAULT 'user',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-INSERT INTO users (full_name, email, password, role) VALUES
-('Vallera Admin', 'admin@vallera.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
