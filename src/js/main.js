@@ -80,7 +80,7 @@ $(document).ready(function() {
         $('.form-control').removeClass('error is-invalid');
         
         $('.password-wrapper .toggle-password').hide();
-        $('.password-wrapper .toggle-password i').removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
+        $('.password-wrapper .toggle-password i').removeClass('bi-eye-slash').addClass('bi-eye');
         $('.password-wrapper input').attr('type', 'password');
     });
 
@@ -323,7 +323,7 @@ $(document).ready(function() {
         });
     });
 
-    $(document).on('input', '.password-wrapper input', function() {
+    $(document).on('input focus click', '.password-wrapper input', function() {
         const wrapper = $(this).closest('.password-wrapper');
         const iconSpan = wrapper.find('.toggle-password');
         if ($(this).val().length > 0) {
@@ -332,24 +332,19 @@ $(document).ready(function() {
             iconSpan.hide();
         }
     });
-
-    $(document).on('focus', '.password-wrapper input', function() {
-        const wrapper = $(this).closest('.password-wrapper');
-        const iconSpan = wrapper.find('.toggle-password');
-        if ($(this).val().length > 0) {
-            iconSpan.show();
-        }
-    });
     
-    $(document).on('click', '.toggle-password', function () {
+    $(document).on('click', '.toggle-password', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         const icon = $(this).find('i');
         const input = $(this).closest('.password-wrapper').find('input');
+        
         if (input.attr('type') === 'password') {
             input.attr('type', 'text');
-            icon.removeClass('bi-eye-fill').addClass('bi-eye-slash-fill');
+            icon.removeClass('bi-eye').addClass('bi-eye-slash');
         } else {
             input.attr('type', 'password');
-            icon.removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
+            icon.removeClass('bi-eye-slash').addClass('bi-eye');
         }
     });
 });
