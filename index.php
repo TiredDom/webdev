@@ -7,7 +7,7 @@ require_once 'partials/header.php';
     <div class="container text-center text-white">
         <h1 class="display-3 font-weight-bold" data-aos="fade-up">Vallera</h1>
         <p class="lead" data-aos="fade-up" data-aos-delay="100">Furniture that speaks your style.</p>
-        <a href="#" class="btn btn-lg login-button mt-3" data-aos="fade-up" data-aos-delay="200">Shop Our Collection</a>
+        <a href="products.php" class="btn btn-lg login-button mt-3" data-aos="fade-up" data-aos-delay="200">Shop Our Collection</a>
     </div>
 </section>
 
@@ -17,9 +17,8 @@ require_once 'partials/header.php';
             <h2 class="font-weight-bold">Shop by Category</h2>
             <p class="text-muted">Find the perfect pieces for every room in your home.</p>
         </div>
-        <div class="row g-4">
-            <!-- Category 1 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center g-4">
+            <div class="col-10 col-sm-8 col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <a href="#" class="text-decoration-none text-dark">
                     <div class="card border-0 h-100 text-center">
                         <div class="overflow-hidden rounded-3 mb-3">
@@ -30,8 +29,9 @@ require_once 'partials/header.php';
                     </div>
                 </a>
             </div>
-            <!-- Category 2 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        </div>
+        <div class="row justify-content-center g-4 mt-1">
+            <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="#" class="text-decoration-none text-dark">
                     <div class="card border-0 h-100 text-center">
                         <div class="overflow-hidden rounded-3 mb-3">
@@ -42,8 +42,7 @@ require_once 'partials/header.php';
                     </div>
                 </a>
             </div>
-            <!-- Category 3 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
                 <a href="#" class="text-decoration-none text-dark">
                     <div class="card border-0 h-100 text-center">
                         <div class="overflow-hidden rounded-3 mb-3">
@@ -66,7 +65,7 @@ require_once 'partials/header.php';
         </div>
         <div class="row g-4">
             <!-- Product 1 -->
-            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="position-relative">
                         <img src="https://placehold.co/400x400/eaeaea/333333?text=Chair" class="card-img-top" alt="Modern Armchair">
@@ -80,7 +79,7 @@ require_once 'partials/header.php';
                 </div>
             </div>
             <!-- Product 2 -->
-            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
                 <div class="card border-0 shadow-sm h-100">
                     <img src="https://placehold.co/400x400/eaeaea/333333?text=Lamp" class="card-img-top" alt="Minimalist Lamp">
                     <div class="card-body text-center">
@@ -91,7 +90,7 @@ require_once 'partials/header.php';
                 </div>
             </div>
             <!-- Product 3 -->
-            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
                 <div class="card border-0 shadow-sm h-100">
                     <img src="https://placehold.co/400x400/eaeaea/333333?text=Table" class="card-img-top" alt="Coffee Table">
                     <div class="card-body text-center">
@@ -102,7 +101,7 @@ require_once 'partials/header.php';
                 </div>
             </div>
             <!-- Product 4 -->
-            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
                 <div class="card border-0 shadow-sm h-100">
                     <img src="https://placehold.co/400x400/eaeaea/333333?text=Sofa" class="card-img-top" alt="Velvet Sofa">
                     <div class="card-body text-center">
@@ -114,7 +113,7 @@ require_once 'partials/header.php';
             </div>
         </div>
         <div class="text-center mt-5" data-aos="fade-up">
-            <a href="#" class="btn btn-link text-dark text-decoration-none fw-bold">View All Products <i class="bi bi-arrow-right"></i></a>
+            <a href="products.php" class="btn btn-link text-dark text-decoration-none fw-bold">View All Products <i class="bi bi-arrow-right"></i></a>
         </div>
     </div>
 </section>

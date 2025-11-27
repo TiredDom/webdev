@@ -3,7 +3,7 @@ $page_title = 'About Us - Vallera';
 require_once 'partials/header.php';
 ?>
 
-<section class="bg-light pb-5 d-flex align-items-center justify-content-center " style="min-height: 300px; padding-top: 170px;">
+<section class="bg-light pb-5" style="padding-top: 140px; padding-bottom: 40px;">
     <div class="container text-center">
         <h1 class="display-4 font-weight-bold" data-aos="fade-up">Our Story</h1>
         <p class="lead text-muted mb-0" data-aos="fade-up" data-aos-delay="100">Designing modern living spaces with timeless elegance and comfort.</p>
@@ -14,9 +14,7 @@ require_once 'partials/header.php';
     <div class="container py-4">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
-                <div class="bg-dark rounded-3 w-100 d-flex align-items-center justify-content-center" style="height: 400px;">
-                    <span class="text-white-50">Image Placeholder</span>
-                </div>
+                <img src="dist/img/about-us-image.jpg" class="img-fluid rounded-3" alt="Vallera furniture in a modern living room setting">
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <h6 class="text-uppercase font-weight-bold letter-spacing-2 mb-3" style="color: #009970;">Who We Are</h6>

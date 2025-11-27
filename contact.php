@@ -3,7 +3,7 @@ $page_title = 'Contact Us - Vallera';
 require_once 'partials/header.php';
 ?>
 
-<section class="bg-light pb-5 d-flex align-items-center justify-content-center " style="min-height: 300px; padding-top: 170px;">
+<section class="bg-light pb-5" style="padding-top: 140px; padding-bottom: 40px;">
     <div class="container text-center">
         <h1 class="display-4 font-weight-bold" data-aos="fade-up">Get in Touch</h1>
         <p class="lead text-muted mb-0" data-aos="fade-up" data-aos-delay="100">We'd love to hear from you. Send us a message or visit our physical store.</p>
